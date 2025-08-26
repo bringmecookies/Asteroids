@@ -27,6 +27,7 @@ def main():
 
     player1 = Player(x, y)
     asteroidfield = AsteroidField()
+    
 
     print("Starting Asteroids!")
     print(f"Screen width: {SCREEN_WIDTH}")
@@ -48,6 +49,14 @@ def main():
                 print("Game Over!")
                 pygame.time.wait(2000)
                 sys.exit()
+
+        #check for shot collision with Asteroid
+
+        for asteroid in asteroids:
+            for shot in shots:
+                if shot.collides_with(asteroid):
+                    asteroid.split()
+                    shot.kill()
 
         #This renders all objects in the window
         for objects in drawable:
