@@ -3,6 +3,7 @@ from constants import *
 from player import *
 from asteroidfield  import *
 from shot import *
+import sys
 
 
 def main():
